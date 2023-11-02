@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Hotel Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header class="header" id="navigation-menu">
+    <div class="container">
+      <nav>
+        <a href="#" class="logo"> <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\logo1.png" alt=""> </a>
+
+        <ul class="nav-menu">
+          <li> <a href="#home" class="nav-link">Home</a> </li>
+          <li> <a href="#about" class="nav-link">About</a> </li>
+          <li> <a href="#rooms" class="nav-link">Rooms</a> </li>
+          <li> <a href="#restaurant" class="nav-link">Restaurant</a> </li>
+          <li> <a href="#gallery" class="nav-link">Gallery</a> </li>
+          <li> <a href="#contact" class="nav-link">Contact</a> </li>
+        </ul>
+
+        <div class="hambuger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <script>
+    const hambuger = document.querySelector('.hambuger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hambuger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hambuger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll('.nav-link');
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hambuger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
+
+  <section class="home top" id="home">
+    <div class="head_container">
+      <div class="box">
+        <div class="text">
+          <h1>Holla People!!</h1>
+          <p>Rosewood Hotels & Resorts is a renowned luxury hotel and resort management company with a global presence. Each Rosewood property offers a unique and opulent experience, combining exceptional architecture and design, personalized service, and exceptional dining. </p>
+          <button>MORE INFO</button>
+        </div>
+      </div>
+      <div class="image">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home1.jpg" class="slide">
+      </div>
+      <div class="image">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home2.jpg" class="slide">
+      </div>
+      <div class="image">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home3.jpg" class="slide">
+      </div>
+      <div class="image">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home4.jpg" class="slide">
+      </div>
+      <div class="image_item">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home1.jpg" alt="" class="slide active" onclick="img('C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home1.jpg')">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home2.jpg" alt="" class="slide active" onclick="img('C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home2.jpg')">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home3.jpg" alt="" class="slide active" onclick="img('C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home3.jpg')">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home4.jpg" alt="" class="slide active" onclick="img('C:\Users\Padmakanth\Documents\html\images\Saved Pictures\home4.jpg')">
+      </div>
+    </div>
+  </section>
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.image');
+      line.style.background = change;
+    }
+  </script>
+  <section class="book">
+    <div class="container flex">
+      <div class="input grid">
+        <div class="box">
+          <label>Check-in:</label>
+          <input type="date" placeholder="Check-in-Date">
+        </div>
+        <div class="box">
+          <label>Check-out:</label>
+          <input type="date" placeholder="Check-out-Date">
+        </div>
+        <div class="box">
+          <label>Adults:</label> <br>
+          <input type="number" placeholder="0">
+        </div>
+        <div class="box">
+          <label>Children:</label> <br>
+          <input type="number" placeholder="0">
+        </div>
+      </div>
+      <div class="search">
+        <input type="submit" value="SEARCH">
+      </div>
+    </div>
+  </section>
+  <section class="about top" id="about">
+    <div class="container flex">
+      <div class="left">
+        <div class="img">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\a1.jpg" alt="" class="image1">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\a2.jpg" alt="" class="image2">
+        </div>
+      </div>
+      <div class="right">
+        <div class="heading">
+          <h5>RAISING COMFOMRT TO THE HIGHEST LEVEL</h5>
+          <h2>Welcome to Rosewood Resorts</h2>
+          <p>Rosewood Hotels & Resorts is a renowned luxury hotel and resort management company with a global presence. Each Rosewood property offers a unique and opulent experience, combining exceptional architecture and design, personalized service, and exceptional dining. The brand's commitment to delivering an unforgettable guest experience has earned it a reputation for being one of the finest names in luxury hospitality. </p>
+          <p>With properties in various destinations around the world, Rosewood is known for its dedication to sustainability, luxurious spas, event spaces, and a commitment to reflecting the local culture and heritage in each location. It is an excellent choice for travelers seeking a premium and distinctive hotel experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper top">
+    <div class="container">
+      <div class="text">
+        <h2>Our Amenities</h2>
+        <p>At Rosewood Hotels & Resorts, you can expect a wide array of top-tier amenities tailored to provide an exceptional guest experience.The specific amenities may vary by location, so it's advisable to confirm the offerings at the Rosewood property you intend to visit for a tailored and luxurious stay. </p>
+
+        <div class="content">
+          <div class="box flex">
+            <i class="fas fa-swimming-pool"></i>
+            <span>Swimming pool</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-dumbbell"></i>
+            <span>Gym & yogo</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-spa"></i>
+            <span>Spa & massage</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-ship"></i>
+            <span>Boat Tours</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-swimmer"></i>
+            <span>Surfing Lessons</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-microphone"></i>
+            <span>Conference room</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-water"></i>
+            <span>Diving</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-umbrella-beach"></i>
+            <span>Private Beach</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="room top" id="room">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>RAISING COMFORT TO THE HIGHEST LEVEL</h5>
+          <h2>Rooms $ Suites</h2>
+        </div>
+        
+      </div>
+
+      <div class="content grid">
+        <div class="box">
+          <div class="img">
+            <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\r1.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>Deluxe Rooms</h3>
+            <p> <span>$</span>50 <span>/per night</span> </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\r2.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>Superior Rooms</h3>
+            <p> <span>$</span>100 <span>/per night</span> </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\r3.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>Grand Rooms</h3>
+            <p> <span>$</span>129 <span>/per night</span> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper wrapper2 top">
+    <div class="container">
+      <div class="text">
+        <div class="heading">
+          <h5>AT THE HEART OF COMMUNICATION</h5>
+          <h2>People Say</h2>
+        </div>
+
+        <div class="para">
+          <p>Luxury hotel experiences at Rosewood Hotels & Resorts are synonymous with opulence. These properties boast elegant accommodations, top-notch dining, and world-class service. Each stay promises a blend of comfort and indulgence that caters to the most discerning of travelers.</p>
+          <div class="box flex">
+            <div class="img">
+              <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\c.jpg" alt="">
+            </div>
+            <div class="name">
+              <h5>Elliana Rose</h5>
+              <h5>IDAHO</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="restaurant top" id="restaurant">
+    <div class="container flex">
+      <div class="left">
+        <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\re.jpg" alt="">
+      </div>
+      <div class="right">
+        <div class="text">
+          <h2>Our Restaurant</h2>
+          <p> Rosewood Hotels & Resorts offer world-class dining experiences, often featuring gourmet cuisine with a focus on locally sourced ingredients. Their restaurants are known for their exceptional culinary offerings and elegant ambiance.</p>
+        </div>
+        <div class="accordionWrapper">
+          <div class="accordionItem open">
+            <h2 class="accordionIHeading">Italian Kitchen</h2>
+            <div class="accordionItemContent">
+              <p> Italian Kitchen at Rosewood Hotels & Resorts is a culinary haven for lovers of Italian cuisine. With an extensive menu of traditional and modern Italian dishes, it offers a delectable journey through the flavors of Italy. Guests can savor handmade pasta, wood-fired pizza, and a fine selection of Italian wines in a warm and inviting atmosphere.
+              </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Mexican Kitchen</h2>
+            <div class="accordionItemContent">
+              <p>The Mexican Kitchen at Rosewood Hotels & Resorts invites guests to savor the vibrant and rich flavors of Mexico. It serves authentic Mexican dishes prepared with fresh ingredients and bold spices, providing an immersive culinary journey. Guests can enjoy traditional tacos, enchiladas, and a variety of margaritas in a lively and culturally inspired setting.
+              </p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Indian Kitchen</h2>
+            <div class="accordionItemContent">
+              <p>The Indian Kitchen is a culinary treasure trove of diverse flavors and spices. Known for its aromatic curries, tandoori dishes, and a rich tapestry of vegetarian and non-vegetarian offerings, it offers an exploration of the subcontinent's cuisine. From the creamy indulgence of butter chicken to the fiery heat of vindaloo, Indian cuisine caters to a wide range of palates.</p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">Chinese Kitchen</h2>
+            <div class="accordionItemContent">
+              <p>The Chinese Kitchen is a flavorful world of diverse regional cuisines. It encompasses everything from the fiery dishes of Sichuan to the delicate dim sum of Cantonese cuisine, showcasing the art of stir-frying and steaming with fresh ingredients and bold flavors. Chinese cuisine is celebrated for its rich history and culinary mastery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    var accItem = document.getElementsByClassName('accordionItem');
+    var accHD = document.getElementsByClassName('accordionIHeading');
+
+    for (i = 0; i < accHD.length; i++) {
+      accHD[i].addEventListener('click', toggleItem, false);
+    }
+
+    function toggleItem() {
+      var itemClass = this.parentNode.className;
+      for (var i = 0; i < accItem.length; i++) {
+        accItem[i].className = 'accordionItem close';
+      }
+      if (itemClass == 'accordionItem close') {
+        this.parentNode.className = 'accordionItem open';
+      }
+    }
+  </script>
+
+
+
+  <section class="gallary top " id="gallary">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>WELCOME TO OUR PHOTO GALLERY</h5>
+          <h2>Photo Gallery of Our Hotel</h2>
+        </div>
+      </div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g1.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g2.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g3.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g4.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g5.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g6.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g7.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="C:\Users\Padmakanth\Documents\html\images\Saved Pictures\g8.jpg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+
+
+
+  <section class="map top">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14131.036667732067!2d85.32395955!3d27.69383745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1637755481449!5m2!1sen!2snp" width="600" height="450" style="border:0;"
+      allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+
+  <footer>
+    <div class="container grid top">
+      <div class="box">
+        <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/48/000000/external-hotel-hotel-services-and-city-elements-flatart-icons-flat-flatarticons-1.png" />
+        <p> Except to obtain some advantage from it, no pain, they are extremely in their duty, who fail in their duty through weakness of will.</p>
+
+        <p>Accepted payment methods</p>
+        <div class="payment grid">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" />
+          <img src="https://img.icons8.com/color-glass/48/000000/paypal.png" />
+          <img src="https://img.icons8.com/fluency/48/000000/amex.png" />
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Recent News</h3>
+
+        <ul>
+          <li>Our Secret Island Boat Tour Is Just for You</li>
+          <li>Chill and Escape in Our Natural Shelters</li>
+          <li>September in Rosewood Hotel</li>
+          <li>Live Music Concerts at Rosewood</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>For Customers</h3>
+        <ul>
+          <li>About Rosewood</li>
+          <li>Customer Care/Help</li>
+          <li>Corporate Accounts</li>
+          <li>Financial Information</li>
+          <li>Terms & Conditions</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Contact Us</h3>
+
+        <ul>
+          <li>3015 Grand Ave, Cocount Grove, Merrick Way FL 123456</li>
+          <li><i class="far fa-envelope"></i>dnagakavya3@gmail.com </li>
+          <li><i class="far fa-phone-alt"></i>9187376876 </li>
+          <li><i class="far fa-phone-alt"></i>9976645865 </li>
+          <li><i class="far fa-comments"></i>24/ 7 Customer Services </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
